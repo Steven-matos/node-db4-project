@@ -10,7 +10,10 @@ exports.up = function(knex) {
     .createTable("ingr", tbl => {
       tbl.increments();
 
-      tbl.string("name", 255).unique().notNullable();
+      tbl
+        .string("name", 255)
+        .notNullable()
+        .unique();
     })
     .createTable("ingr_quantity", tbl => {
       tbl.increments();
